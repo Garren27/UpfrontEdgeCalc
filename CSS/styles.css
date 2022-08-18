@@ -1,0 +1,54 @@
+.inlineCalcSummary {
+	font-size: 0.75em;
+} 
+
+body {
+	text-align: center;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+h1, h2 {
+	background-color: #da291c;
+	color: white;
+	
+}
+
+button {
+	font-family: 'Noto Sans', sans-serif;
+}
+
+div.input {
+	clear: left;
+	margin: 20px;
+	overflow: auto;
+	width: 98%;
+}
+
+label {
+	float: left;
+	text-align: left;
+	width: 15%;
+	padding-left: 35%;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+input, select {
+	float: left;
+	clear: right;
+	text-align: right;
+	margin-left: 1%;
+	width: 200px;
+	font-family: 'Noto Sans', sans-serif;
+}
+
+#province, #downpayment, #volpayment {
+	width: 208px;
+}
+
+.hiddenBlock {
+	display : none;
+}
+
+.displayBlock {
+	display : block;
+}

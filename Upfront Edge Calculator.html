@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="CSS/styles.css">
+    
+    <title>Upfront Edge Calculator</title>
+</head>
+<body>
+    <h1>Upfront Edge Calculator</h1>
+    <div> 
+        <h2>Phone Info</h2>
+
+        <div class="input" >
+            <label for="noterm">Phone No Term Cost:</label>
+            <input id="noterm" type="number" placeholder="1000.00" value="1600.00" step="0.01" min="0">
+        </div>
+        
+        <div class="input" >
+            <label for="ueamount">Phone Upfront Edge Amount:</label>
+            <input id="ueamount" type="number" placeholder="100.00" value="500.00" step="1.00" min="0">
+        </div>
+        
+        <div class="input" >
+            <label for="fincredit">Financing Promo Credit:</label>
+            <input id="fincredit" type="number" placeholder="10.00" value="45.83" step="0.01" min="0">
+        </div class="input" >
+    
+        <div class="input" >
+            <label for="downpayment">Mandatory Downpayment (20% or 40%):</label>
+            <select id="downpayment">
+                
+            </select>
+        </div>
+
+        <div class="input" >
+            <label for="volpayment">Voluntary Downpayment (Increments of $120):</label>
+            <select id="volpayment">
+                
+            </select>
+        </div>
+
+        <div class="input">
+            <label for="province">Province:</label>
+            <select id="province">
+                <option value="Ontario">Ontario</option>
+                <option value="Quebec">Quebec</option>
+                <option value="Alberta">Alberta</option>
+                <option value="British Columbia">British Columbia</option>
+                <option value="Manitoba">Manitoba</option>
+                <option value="Saskatchewan">Saskatchewan</option>
+                <option value="Newfoundland">Newfoundland + Labrador</option>
+                <option value="Nova Scotia">Nova Scotia</option>
+                <option value="New Brunswick">New Brunswick</option>
+                <option value="PEI">PEI</option>
+                <option value="Nunavut">Nunavut</option>
+                <option value="NW">NW Territories</option>
+                <option value="Yukon">Yukon</option>
+            </select>
+        </div>
+        
+        <div class="input">
+            <label for="phoneName">Phone:</label>
+            <input id="phoneName"  type="text" placeholder="Use if quoting multiple devices">
+        </div>
+
+        <button id="calcButton">Calculate</button>
+    
+        
+    </div>
+
+    <div id="resultsBlock" class="hiddenBlock">
+        <h2>Results</h2>
+
+        <div id = "results">
+            <p id ="phone">
+                This example illustrates "$0 on Upfront Edge" still has taxes customers must pay:
+            </p>
+
+            <p id="advertised">Advertised Cost: 
+                <br /><span class="inlineCalcSummary">(No Term - UE Credit) / 24 - Financing Promo</span>
+            </p>
+
+            <hr>
+
+            <p id="billPrice">Actual Cost on Bill:
+                <br /><span class="inlineCalcSummary">(No Term - UE Credit) / 24</span>
+            </p>
+        
+            <p id="monthlyTax">Taxes on Bill:
+                <br /><span class="inlineCalcSummary">(No Term x Tax %) / 24</span>
+            </p>
+
+            <p id="promoTax">Tax Deduction from Promo Credit:
+                <br /><span class="inlineCalcSummary">-Fin Credit x Tax %</span>
+            </p>
+
+            <p id="actualTax">Actual Tax (Not displayed on Bill):
+                <br /><span class="inlineCalcSummary">((No Term x Tax %) / 24) - (Fin Credit x Tax %)</span>
+            </p>
+
+            <hr>
+            
+            <p id="finalResult">
+                Putting it all together: (MSF + Tax) + (Advertised Price + Actual Tax)
+            </p>
+            
+            <hr>
+
+            <p id="totalFinanced">Total Cost of Phone (includes taxes) BEFORE Upfront Edge Credit: <p>   
+            <p id="taxes">Total Taxes: </p>
+            
+
+        </div>
+
+        <button id="addToHistoryButton">Add to History</button>
+        <!-- <button id="newButton">New</button> -->
+
+    </div>
+
+    <div id="history" class="hiddenBlock">
+        <!-- TODO: Create phone profile so don't need to re-enter all the data again -->
+        <h2>History</h2>
+        <div id="historyEntries">
+
+
+        </div>
+        <button id="clearHistoryButton">Clear History</button>
+    </div>
+
+    <script src="js/calculate.js"></script>
+</body>
+</html>
